@@ -1,0 +1,28 @@
+<html>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <h1>WebView POC</h1>
+    <br />
+    <br />
+    <button type="button" style="font-size:larger" onclick="javascript:invokeCSCode('test');">Invoke C# Code</button>
+    <br />
+    <br />
+    <p id="result" style="font-size:x-large">Sending Selected User Name data back to webview:</p>
+    <br />
+    <script type="text/javascript">function handleSelectedContact(str) {
+            $('#result').text($('#result').text() + " " + str);
+            console.log(str);
+        }
+
+
+        function invokeCSCode(data) {
+            try {
+                console.log("Sending Data:" + data);
+                invokeCSharpAction(data);
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }</script>
+</body>
+    </html>
